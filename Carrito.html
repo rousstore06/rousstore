@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tu Carrito | RousStore</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="carrito-body">
+
+  <div class="carrito-wrapper">
+    <h1 class="carrito-titulo">Tu Carrito</h1>
+
+    <div id="lista-carrito">
+      <!-- Productos se insertarán aquí -->
+    </div>
+
+    <div id="total"></div>
+
+    <button onclick="vaciarCarrito()" class="btn-vaciar"> <img src="icons8-papelera-30.png" alt="" class="papelera"> Vaciar carrito</button>
+
+    <a href="index.html" class="btn-volver">← Volver a la tienda</a>
+  </div>
+
+  <script>
+  let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
+  const contenedor = document.getElementById("lista-carrito");
+  const total = document.getElementById("total");
+
+  function guardarCarrito() {
+    localStorage.setItem("carrito", JSON.stringify(carrito));
+  }
+
+  function renderCarrito() {
+    contenedor.innerHTML = "";
+    let sumaTotal = 0;
+
+    if (carrito.length === 0) {
+      contenedor.innerHTML = "<p>Tu carrito está vacío.</p>";
+      total.textContent = "";
+      return;
+    }
+
+    carrito.forEach((producto, index) => {
+      sumaTotal += producto.precio * producto.cantidad;
+
+      const item = document.createElement("div");
+      item.classList.add("producto-carrito");
+      item.innerHTML = `
+        <div class="producto-info">
+          <p class="producto-nombre">${producto.nombre}</p>
+          <p class="producto-detalle">Cantidad: ${producto.cantidad}</p>
+        </div>
+        <div class="producto-cantidad">
+          <button onclick="cambiarCantidad(${index}, -1)">➖</button>
+          <button onclick="cambiarCantidad(${index}, 1)">➕</button>
+          <button onclick="eliminarProducto(${index})">🗑️</button>
+        </div>
+        <div class="producto-precio">$${(producto.precio * producto.cantidad).toLocaleString()}</div>
+      `;
+      contenedor.appendChild(item);
+    });
+
+    total.textContent = `Total: $${sumaTotal.toLocaleString()}`;
+  }
+
+  function cambiarCantidad(index, cambio) {
+    carrito[index].cantidad += cambio;
+    if (carrito[index].cantidad <= 0) {
+      carrito.splice(index, 1);
+    }
+    guardarCarrito();
+    renderCarrito();
+  }
+
+  function eliminarProducto(index) {
+    carrito.splice(index, 1);
+    guardarCarrito();
+    renderCarrito();
+  }
+
+  function vaciarCarrito() {
+    carrito = [];
+    guardarCarrito();
+    renderCarrito();
+  }
+
+  // Render al cargar
+  renderCarrito();
+</script>
+
+
+</body>
+</html>

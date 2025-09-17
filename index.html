@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Belleza Natural | Tienda de Maquillaje</title>
+  <link rel="stylesheet" href="styles.css"/>
+</head>
+<body>
+
+  <!-- Navegación -->
+  <header class="header">
+  <div class="container nav-container">
+    
+    <!-- Logo -->
+    <div class="logo">
+      <img src="maquillaje.png" alt="Logo Belleza Natural">
+      <span>ROUSSTORE</span>
+    </div>
+
+    <!-- Botón hamburguesa -->
+    <button class="menu-toggle" onclick="toggleMenu()" aria-label="Abrir menú">☰</button>
+
+    <!-- Navegación principal -->
+    <nav class="nav" id="navMenu">
+      <a href="#inicio" class="nav-link">Inicio</a>
+      <a href="#productos" class="nav-link">Productos</a>
+      <a href="#nosotros" class="nav-link">Nosotros</a>
+      <a href="#contacto" class="nav-link">Contacto</a>
+    </nav>
+
+    <!-- Buscador y carrito -->
+    <div class="nav-right">
+      <form class="buscador-encabezado" onsubmit="buscarProductos(); return false;">
+        <input type="text" id="buscarInput" placeholder="Buscar producto...">
+        <button type="submit" class="botonBuscar">
+          <img src="icons8-search-50.png" alt="buscar" class="icono-buscar">
+        </button>
+      </form>
+
+      <button class="carrito-icono" onclick="toggleCarrito()" aria-label="Ver carrito">
+        <img src="icons8-carrito-de-compras-64.png" alt="Carrito de compras" class="icono-img">
+        <span id="contadorCarrito">0</span>
+      </button>
+    </div>
+
+  </div>
+</header>
+
+  <!-- Sección de inicio -->
+  <section id="inicio" class="hero">
+    <div class="container">
+      <h1>Descubre la belleza que hay en ti.</h1>
+      <p>¡Regálate lo que mereces, porque tú también eres prioridad!</p>
+      <a href="#productos" class="btn" >Ver Productos</a>
+    </div>
+  </section>
+
+  <!-- Sección de productos -->
+   <h1 class="titulo-carrusel">PRODUCTOS DESTACADOS</h1>
+  <section class="carrusel">
+  <div class="slides">
+    <img src="Rehab.png" class="slide active" alt="Imagen 1">
+    <img src="correctoranik5.png" class="slide" alt="Imagen 2">
+    <img src="Ateneamini.png" class="slide" alt="Imagen 3">
+    <img src="BROCHA-PARA-BASE-AK2-ANI-K.png" class="slide" alt="Imagen 3">
+  </div>
+  <button class="prev" onclick="cambiarSlide(-1)" aria-label="Imagen anterior">&#10094;</button>
+  <button class="next" onclick="cambiarSlide(1)" aria-label="Imagen siguiente">&#10095;</button>
+</section>
+  <section id="productos" class="section productos">
+    <div class="container">
+      <h2>Nuestros Productos</h2>
+  
+      <div class="product-grid">
+        
+        <div class="product-card">
+          <img src="baseani-k.webp" alt="Base">
+          <h3>Base 2en1 ANI-K</h3>
+          <p>$34.000</p>
+          <button class="btn-add" onclick="agregarDesdeProducto('base-ani-k', 'Base 2en1 ANI-K', 34000)">
+            <span>Añadir al carrito</span>
+          </button>
+        </div>
+  
+      </div>
+    </div>
+  </section>
+
+  <!-- Sección sobre nosotros -->
+  <section id="nosotros" class="section nosotros">
+    <div class="container">
+      <h2>Sobre Nosotros</h2>
+      <p class="texto-seccion">
+        
+    Somos una empresa comprometida con la calidad, el servicio y la innovación. 
+    Trabajamos día a día para ofrecer productos que cumplan con las necesidades de nuestros clientes,
+    manteniendo siempre la ética, la responsabilidad y la excelencia como pilares fundamentales.
+  
+      </p>
+      
+    </div>
+  </section>
+
+  <section class=" lineas-atencio">
+    <h2 class="titulo-seccion"> Líneas de atención</h2>
+    <p class="texto-seccion">
+      
+    📞 Atención al cliente: +57 300 123 4567
+    <br>
+    
+    ✉️ Correo electrónico: contacto@tuempresa.com
+
+    <br>
+
+    
+    🕘 Horarios de atención: Lunes a Viernes de 8:00 am a 6:00 pm
+  
+    </p>
+  </section>
+
+  <section class="Frase final"> 
+    <blockquote class="frase-clave">
+    “Trabajamos con pasión para brindarte lo mejor.”
+  </blockquote>
+  </section>
+
+  <!-- Sección de contacto 
+  <section id="contacto" class="section contacto">
+    <div class="container">
+      <h2>Contáctanos</h2>
+      <form id="contact-form" action="https://formspree.io/f/xzzgvrlq" method="POST">
+        <input type="text" name="nombre" placeholder="Tu nombre" required>
+        <input type="email" name="email" placeholder="Tu correo" required>
+        <textarea name="mensaje" placeholder="Tu mensaje" required></textarea>
+        <button type="submit" class="btn">Enviar Mensaje</button>
+      </form>
+    </div>
+  </section> -->
+  <section id="contacto" class="section contacto">
+<div  class="container">
+  <h2>Contáctanos</h2>
+   <form action="https://formspree.io/f/xzzgvrlq" method="POST">
+  <input type="text" name="nombre" placeholder="Tu nombre" required>
+  <input type="email" name="email" placeholder="Tu correo" required>
+  <textarea name="mensaje" placeholder="Tu mensaje" required></textarea>
+  <button type="submit" class="btn">Enviar Mensaje</button>
+</form>
+</div>
+</section>
+
+
+
+
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <p>&copy; 2025 Belleza Natural. Todos los derechos reservados.</p>
+    </div>
+  </footer>
+  <div class="carrito"></div>
+  <script src="script.js"  defer></script>
+</body>
+</html>
