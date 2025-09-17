@@ -478,3 +478,4 @@ function actualizarContador() {
 document.getElementById("contadorCarrito");
 
 
+
