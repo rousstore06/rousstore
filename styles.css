@@ -1020,4 +1020,61 @@ body {
 .producto-cantidad i {
   color: #c2185b; /* rosado vino para que combine */
   font-size: 14px;
+
+}
+
+.btn-whatsapp {
+  display: flex;
+  align-items: center;
+  justify-content: center ;
+  gap: 8px;
+  margin: 20px auto 0;
+  background-color: #c2185b;
+  color: white;
+  border: none;
+  padding: 14px 28px;
+  border-radius: 30px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  text-align: center;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+
+}
+
+.btn-whatsapp:hover {
+  background-color: #a1134c;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 14px rgba(0,0,0,0.2);
+}
+.w{
+  padding: 1px 0 1px 1px ;
+  width: 30px;
+  height: 30px;
+}
+
+.whatsapp-float {
+  position: fixed;
+  width: 60px;
+  height: 60px;
+  bottom: 20px;
+  right: 20px;
+  background-color: #25d366;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+  z-index: 1000;
+  transition: transform 0.3s ease;
+}
+
+.whatsapp-float:hover {
+  transform: scale(1.1);
+}
+
+.whatsapp-float img {
+  width: 35px;
+  height: 35px;
 }
