@@ -289,7 +289,7 @@ document.addEventListener("DOMContentLoaded", actualizarCarrito);*/
     { id: 'Bloom bubble tint', nombre: 'Bloom bubble tint', precio:12500, categoria: "MAQUILLAJE", imagen: 'bubble.png' },
     { id: 'Bloom Cosmic', nombre: 'Bloom Cosmic', precio:23500, categoria: "MAQUILLAJE", imagen: 'cosmic.png' },
     { id: 'Bloom Glam', nombre: 'Bloom Glam', precio:11200, categoria: "MAQUILLAJE", imagen: 'glam.png' },
-    { id: 'Bloom gloss mini bloomshell', nombre: 'Bloom gloss mini Bloomshell', precio:3400, categoria: "MAQUILLAJE", imagen: 'gloosmini.png' },
+    { id: 'Bloom gloss mini bloomshell', nombre: 'Bloom gloss mini Bloomshell', precio:3400, categoria: "MAQUILLAJE", imagen: 'lab.png' },
     { id: 'Bloom Rehab', nombre: 'Bloom Rehab', precio:9900, categoria: "MAQUILLAJE", imagen: 'rehab.png' },
     { id: 'Bloomlove Bálsamo', nombre: 'Bloomlove Bálsamo', precio:10500, categoria: "MAQUILLAJE", imagen: 'love.png' },
     { id: 'Cepillo Anti frizz', nombre: 'Cepillo Anti frizz', precio:15000, categoria: "MAQUILLAJE", imagen: 'cepillobloom.png' },
@@ -476,6 +476,7 @@ function actualizarContador() {
 
 
 document.getElementById("contadorCarrito");
+
 
 
 
