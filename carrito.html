@@ -17,6 +17,10 @@
 
     <div id="total"></div>
 
+    <button onclick="enviarWhatsApp()" class="btn-whatsapp"> <img src="icons8-whatsapp-48.png" alt="w" class="w">
+     Finalizar compra por WhatsApp 
+    </button>
+
     <button onclick="vaciarCarrito()" class="btn-vaciar"> <img src="icons8-papelera-30.png" alt="" class="papelera"> Vaciar carrito</button>
 
     <a href="index.html" class="btn-volver">← Volver a la tienda</a>
@@ -89,8 +93,35 @@
   renderCarrito();
 </script>
 
+  <script>
+function enviarWhatsApp() {
+  if (carrito.length === 0) {
+    alert("Tu carrito está vacío.");
+    return;
+  }
+
+  let mensaje = " *Pedido desde RousStore*:%0A%0A";
+  let total = 0;
+
+  carrito.forEach(producto => {
+    mensaje += `• ${producto.nombre} (x${producto.cantidad}) - $${(producto.precio * producto.cantidad).toLocaleString()}%0A`;
+    total += producto.precio * producto.cantidad;
+  });
+
+  mensaje += `%0A *Total: $${total.toLocaleString()}*%0A%0A`;
+  mensaje += "👉 Por favor confirma tu pedido 🙌";
+
+  // Número de WhatsApp (coloca el tuyo con código de país, sin +, sin espacios)
+  const numero = "573132902137";  
+
+  // Abrir WhatsApp
+  window.open(`https://wa.me/${numero}?text=${mensaje}`, "_blank");
+}
+</script>
+
 
 </body>
 
 </html>
+
 
