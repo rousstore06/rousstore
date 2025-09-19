@@ -314,7 +314,7 @@ document.addEventListener("DOMContentLoaded", actualizarCarrito);*/
     { id: 'Corrector liquido DOLCE BELLA', nombre: 'Corrector liquido DOLCE BELLA', precio:13500, categoria: "MAQUILLAJE", imagen: 'codo.png' },
     { id: 'Espuma limpiadora Dolce bella', nombre: 'Espuma limpiadora Dolce Bella', precio:20200, categoria: "MAQUILLAJE", imagen: 'espu.png' },
     { id: 'Kit de iluminadores x4 Dolce Bella', nombre: 'Kit de iluminadores x4 Dolce Bella', precio:30500, categoria: "MAQUILLAJE", imagen: 'glow.png' },
-    { id: 'Crema facial de acido hialuronico Dolce Bella', nombre: 'Crema facial de acido hialuronico Dolce Bella', precio:15500, categoria: "MAQUILLAJE", imagen: 'ACIDO.png' },
+    { id: 'Crema facial de acido hialuronico Dolce Bella', nombre: 'Crema facial de acido hialuronico Dolce Bella', precio:15500, categoria: "MAQUILLAJE", imagen: 'aci.png' },
     { id: 'Pestañina Dolce Bella', nombre: 'Pestañina Dolce Bella', precio:12500, categoria: "MAQUILLAJE", imagen: 'pes.png' },
     { id: 'Corrector AME', nombre: 'Corrector AME', precio:37900, categoria: "MAQUILLAJE", imagen: 'AMECO.PNG' },
     { id: 'Polvo compacto blurring AME ', nombre: 'Polvo compacto blurring AME', precio:40000, categoria: "MAQUILLAJE", imagen: 'POLAME.png' },
@@ -476,6 +476,7 @@ function actualizarContador() {
 
 
 document.getElementById("contadorCarrito");
+
 
 
 
